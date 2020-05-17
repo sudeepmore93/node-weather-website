@@ -5,7 +5,7 @@ const forecast = (lat, lon, callback) => {
 
     axios.get(url)
         .then(({ data }) => {
-            callback(undefined, `${data.weather[0].main} throughout the Day. It is currently ${data.main.temp} degrees out.`)
+            callback(undefined, `${data.weather[0].main} throughout the Day. It is currently ${data.main.temp} degrees out. The high today is ${data.main.temp_max} with a low of ${data.main.temp_min}`)
         })
         .catch(error => {
             callback("Unable to connect to weather service!", undefined)
